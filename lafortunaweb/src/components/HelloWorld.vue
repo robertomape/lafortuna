@@ -1,58 +1,141 @@
 <template>
-  <div class="hello">
-    <h1>{{ msg }}</h1>
-    <p>
-      For a guide and recipes on how to configure / customize this project,<br>
-      check out the
-      <a href="https://cli.vuejs.org" target="_blank" rel="noopener">vue-cli documentation</a>.
-    </p>
-    <h3>Installed CLI Plugins</h3>
-    <ul>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-babel" target="_blank" rel="noopener">babel</a></li>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-eslint" target="_blank" rel="noopener">eslint</a></li>
-    </ul>
-    <h3>Essential Links</h3>
-    <ul>
-      <li><a href="https://vuejs.org" target="_blank" rel="noopener">Core Docs</a></li>
-      <li><a href="https://forum.vuejs.org" target="_blank" rel="noopener">Forum</a></li>
-      <li><a href="https://chat.vuejs.org" target="_blank" rel="noopener">Community Chat</a></li>
-      <li><a href="https://twitter.com/vuejs" target="_blank" rel="noopener">Twitter</a></li>
-      <li><a href="https://news.vuejs.org" target="_blank" rel="noopener">News</a></li>
-    </ul>
-    <h3>Ecosystem</h3>
-    <ul>
-      <li><a href="https://router.vuejs.org" target="_blank" rel="noopener">vue-router</a></li>
-      <li><a href="https://vuex.vuejs.org" target="_blank" rel="noopener">vuex</a></li>
-      <li><a href="https://github.com/vuejs/vue-devtools#vue-devtools" target="_blank" rel="noopener">vue-devtools</a></li>
-      <li><a href="https://vue-loader.vuejs.org" target="_blank" rel="noopener">vue-loader</a></li>
-      <li><a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">awesome-vue</a></li>
-    </ul>
+  <div class="landing-page">
+    <header class="header">
+      <div class="logo">
+        <img src="@/assets/logo.png" alt="Logo de la empresa" />
+      </div>
+      <nav class="navigation">
+        <ul>
+          <li><a href="#about">Sobre Nosotros</a></li>
+          <li><a href="#reviews">Reseñas</a></li>
+          <li><a href="#contact">Contacto</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <h1>Bienvenido a Loterías y Juegos del Estado</h1>
+      <p>La suerte te espera, compra tu boleto hoy mismo.</p>
+    </section>
+
+    <section id="about" class="about">
+      <h2>Sobre Nosotros</h2>
+      <p>Somos una empresa dedicada a la venta de loterías y juegos del estado con años de experiencia.</p>
+    </section>
+
+    <section id="reviews" class="reviews">
+      <h2>Reseñas de nuestros clientes</h2>
+      <div class="review">
+        <p>"¡Excelente servicio y muy buena atención!"</p>
+        <span>- Juan Pérez</span>
+      </div>
+      <div class="review">
+        <p>"He ganado varias veces gracias a sus boletos."</p>
+        <span>- María López</span>
+      </div>
+      <div class="review">
+        <p>"Muy confiable y seguro."</p>
+        <span>- Carlos Sánchez</span>
+      </div>
+    </section>
+
+    <footer id="contact" class="footer">
+      <h2>Contacto</h2>
+      <p>Ubicación: Calle Falsa 123, Ciudad</p>
+      <p>Email: contacto@loteria.com</p>
+      <p>Teléfono: +123 456 7890</p>
+    </footer>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'HelloWorld',
-  props: {
-    msg: String
-  }
-}
+  name: "LandingPage",
+};
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h3 {
-  margin: 40px 0 0;
+.landing-page {
+  font-family: Arial, sans-serif;
+  color: #333;
+  background-color: #ffffff;
 }
-ul {
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #ffffff;
+  border-bottom: 2px solid #4CAF50;
+}
+
+.logo img {
+  height: 50px;
+}
+
+.navigation ul {
   list-style-type: none;
-  padding: 0;
+  display: flex;
+  gap: 1rem;
 }
-li {
-  display: inline-block;
-  margin: 0 10px;
+
+.navigation ul li a {
+  text-decoration: none;
+  color: #4CAF50;
+  font-weight: bold;
 }
-a {
-  color: #42b983;
+
+.hero {
+  text-align: center;
+  padding: 4rem 2rem;
+  background-color: #ffffff;
+  border-bottom: 2px solid #4CAF50;
+}
+
+.hero h1 {
+  color: #4CAF50;
+  font-size: 2.5rem;
+}
+
+.hero p {
+  color: #333;
+  font-size: 1.25rem;
+}
+
+.about,
+.reviews,
+.footer {
+  padding: 2rem 2rem;
+  text-align: center;
+}
+
+.about h2,
+.reviews h2,
+.footer h2 {
+  color: #4CAF50;
+  margin-bottom: 1rem;
+}
+
+.review {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: 5px;
+}
+
+.review p {
+  font-style: italic;
+}
+
+.review span {
+  display: block;
+  margin-top: 0.5rem;
+  color: #555;
+}
+
+.footer p {
+  margin: 0.5rem 0;
 }
 </style>
