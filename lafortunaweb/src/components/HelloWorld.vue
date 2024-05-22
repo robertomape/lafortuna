@@ -5,11 +5,15 @@
         <img src="@/assets/logo.png" alt="Logo de la empresa" />
       </div>
       <nav class="navigation">
-        <ul>
-          <li><a href="#about">Sobre Nosotros</a></li>
-          <li><a href="#reviews">Reseñas</a></li>
-          <li><a href="#contact">Contacto</a></li>
+        <ul :class="{ 'nav-open': menuOpen }">
+          <li><a href="#about" @click="toggleMenu">Sobre Nosotros</a></li>
+          <li><a href="#reviews" @click="toggleMenu">Reseñas</a></li>
+          <li><a href="#contact" @click="toggleMenu">Contacto</a></li>
         </ul>
+        <button class="menu-button" @click="toggleMenu">
+          <span v-if="!menuOpen">☰</span>
+          <span v-else>✖</span>
+        </button>
       </nav>
     </header>
 
@@ -26,15 +30,15 @@
     <section id="reviews" class="reviews">
       <h2>Reseñas de nuestros clientes</h2>
       <div class="review">
-        <p>"¡Excelente servicio y muy buena atención!"</p>
+        <p>"¡Excelente servicio y muy buena atención!" 😊</p>
         <span>- Juan Pérez</span>
       </div>
       <div class="review">
-        <p>"He ganado varias veces gracias a sus boletos."</p>
+        <p>"He ganado varias veces gracias a sus boletos." 🎉</p>
         <span>- María López</span>
       </div>
       <div class="review">
-        <p>"Muy confiable y seguro."</p>
+        <p>"Muy confiable y seguro." 🔒</p>
         <span>- Carlos Sánchez</span>
       </div>
     </section>
@@ -50,7 +54,17 @@
 
 <script>
 export default {
-  name: "LandingPage",
+  name: "HelloWorld",
+  data() {
+    return {
+      menuOpen: false,
+    };
+  },
+  methods: {
+    toggleMenu() {
+      this.menuOpen = !this.menuOpen;
+    },
+  },
 };
 </script>
 
@@ -68,10 +82,17 @@ export default {
   padding: 1rem 2rem;
   background-color: #ffffff;
   border-bottom: 2px solid #4CAF50;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 .logo img {
   height: 50px;
+}
+
+.navigation {
+  position: relative;
 }
 
 .navigation ul {
@@ -84,6 +105,15 @@ export default {
   text-decoration: none;
   color: #4CAF50;
   font-weight: bold;
+}
+
+.menu-button {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #4CAF50;
 }
 
 .hero {
@@ -137,5 +167,25 @@ export default {
 
 .footer p {
   margin: 0.5rem 0;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .navigation ul {
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #ffffff;
+    width: 200px;
+    border: 1px solid #ddd;
+    display: none;
+  }
+  .navigation ul.nav-open {
+    display: flex;
+  }
+  .menu-button {
+    display: block;
+  }
 }
 </style>
