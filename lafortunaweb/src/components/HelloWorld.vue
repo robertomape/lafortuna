@@ -18,6 +18,10 @@
     </header>
 
     <section class="hero">
+      <picture>
+        <source media="(min-width: 768px)" srcset="@/assets/maxresdefault.jpg">
+        <img src="@/assets/heartnb.png" alt="Imagen de lotería">
+      </picture>
       <h1>Bienvenido a Loterías y Juegos del Estado</h1>
       <p>La suerte te espera, compra tu boleto hoy mismo.</p>
     </section>
@@ -30,14 +34,17 @@
     <section id="reviews" class="reviews">
       <h2>Reseñas de nuestros clientes</h2>
       <div class="review">
+        <img class="review-image" src="@/assets/logo.png" alt="Persona 1" />
         <p>"¡Excelente servicio y muy buena atención!" 😊</p>
         <span>- Juan Pérez</span>
       </div>
       <div class="review">
+        <img class="review-image" src="@/assets/logo.png" alt="Persona 2" />
         <p>"He ganado varias veces gracias a sus boletos." 🎉</p>
         <span>- María López</span>
       </div>
       <div class="review">
+        <img class="review-image" src="@/assets/logo.png" alt="Persona 3" />
         <p>"Muy confiable y seguro." 🔒</p>
         <span>- Carlos Sánchez</span>
       </div>
@@ -123,6 +130,13 @@ export default {
   border-bottom: 2px solid #4CAF50;
 }
 
+.hero picture img {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  margin: 0 auto 2rem;
+}
+
 .hero h1 {
   color: #4CAF50;
   font-size: 2.5rem;
@@ -148,6 +162,8 @@ export default {
 }
 
 .review {
+  display: flex;
+  align-items: center;
   background-color: #f9f9f9;
   border: 1px solid #ddd;
   padding: 1rem;
@@ -155,8 +171,16 @@ export default {
   border-radius: 5px;
 }
 
+.review-image {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 1rem;
+}
+
 .review p {
   font-style: italic;
+  flex: 1;
 }
 
 .review span {
@@ -180,6 +204,7 @@ export default {
     width: 200px;
     border: 1px solid #ddd;
     display: none;
+    padding: 10px;
   }
   .navigation ul.nav-open {
     display: flex;
