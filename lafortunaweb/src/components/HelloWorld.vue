@@ -35,18 +35,24 @@
       <h2>Reseñas de nuestros clientes</h2>
       <div class="review">
         <img class="review-image" src="@/assets/person1.jpg" alt="Persona 1" />
-        <p>"¡Excelente servicio y muy buena atención!" 😊</p>
-        <span>- Juan Pérez</span>
+        <div class="review-text">
+          <p>"¡Excelente servicio y muy buena atención!" 😊</p>
+          <span>- Juan Pérez</span>
+        </div>
       </div>
       <div class="review">
         <img class="review-image" src="@/assets/person2.jpg" alt="Persona 2" />
-        <p>"He ganado varias veces gracias a sus boletos." 🎉</p>
-        <span>- María López</span>
+        <div class="review-text">
+          <p>"He ganado varias veces gracias a sus boletos." 🎉</p>
+          <span>- María López</span>
+        </div>
       </div>
       <div class="review">
         <img class="review-image" src="@/assets/person3.jpg" alt="Persona 3" />
-        <p>"Muy confiable y seguro." 🔒</p>
-        <span>- Carlos Sánchez</span>
+        <div class="review-text">
+          <p>"Muy confiable y seguro." 🔒</p>
+          <span>- Carlos Sánchez</span>
+        </div>
       </div>
     </section>
 
@@ -61,7 +67,7 @@
 
 <script>
 export default {
-  name: "HelloWorld",
+  name: "HelloWorld", 
   data() {
     return {
       menuOpen: false,
@@ -172,11 +178,6 @@ export default {
 }
 
 .review-image {
-  /* width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  margin-right: 1rem; */
-
   width: 70px;
   height: 70px;
   border-radius: 50%;
@@ -184,9 +185,12 @@ export default {
   margin-right: 1rem;
 }
 
+.review-text {
+  flex: 1;
+}
+
 .review p {
   font-style: italic;
-  flex: 1;
 }
 
 .review span {
