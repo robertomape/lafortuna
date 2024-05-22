@@ -34,17 +34,17 @@
     <section id="reviews" class="reviews">
       <h2>Reseñas de nuestros clientes</h2>
       <div class="review">
-        <img class="review-image" src="@/assets/logo.png" alt="Persona 1" />
+        <img class="review-image" src="@/assets/person1.jpg" alt="Persona 1" />
         <p>"¡Excelente servicio y muy buena atención!" 😊</p>
         <span>- Juan Pérez</span>
       </div>
       <div class="review">
-        <img class="review-image" src="@/assets/logo.png" alt="Persona 2" />
+        <img class="review-image" src="@/assets/person2.jpg" alt="Persona 2" />
         <p>"He ganado varias veces gracias a sus boletos." 🎉</p>
         <span>- María López</span>
       </div>
       <div class="review">
-        <img class="review-image" src="@/assets/logo.png" alt="Persona 3" />
+        <img class="review-image" src="@/assets/person3.jpg" alt="Persona 3" />
         <p>"Muy confiable y seguro." 🔒</p>
         <span>- Carlos Sánchez</span>
       </div>
@@ -172,9 +172,15 @@ export default {
 }
 
 .review-image {
-  width: 50px;
+  /* width: 50px;
   height: 50px;
   border-radius: 50%;
+  margin-right: 1rem; */
+
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
   margin-right: 1rem;
 }
 
