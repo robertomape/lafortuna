@@ -121,8 +121,8 @@ export default {
 .header {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
+  align-items: center; 
+  /* padding: 1rem 2rem; */
   background-color: #ffffff;
   border-bottom: 2px solid #4CAF50;
   position: sticky;
@@ -130,8 +130,12 @@ export default {
   z-index: 1000;
 }
 
+.logo {
+  margin: 0;
+}
+
 .logo img {
-  height: 100px;
+  height: 70px;
 }
 
 @import url('https://fonts.googleapis.com/css?family=Varela+Round');
@@ -141,6 +145,9 @@ export default {
   display: flex;
   justify-content: center; 
   align-items: center; 
+  position: absolute;
+  left:50%;
+  transform: translate(-50%);
 }
 
 .title h1 {
@@ -151,6 +158,7 @@ export default {
 
 .navigation {
   position: relative;
+  margin-right: 20px;
 }
 
 .navigation ul {
@@ -273,7 +281,7 @@ export default {
 }
 
 /* Responsive Styles */
-@media (max-width: 768px) {
+@media (max-width: 1450px) {
   .navigation ul {
     flex-direction: column;
     position: absolute;
